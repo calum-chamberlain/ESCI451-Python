@@ -8,6 +8,7 @@ automate simple data I/O and processing, as well as conduct some simple plotting
 do not aim to teach you the nuances of Python as a language, or any advanced ideas in Python.
 
 The notebooks are as follows:
+
 0. Introduction to Python; - why programming, reproducibility, keeping data and processing seperate.
 1. Python logic - for loops and if statements;
 2. Plotting data with matplotlib (1); - simple plotting of lists, required for visualisation of data later
