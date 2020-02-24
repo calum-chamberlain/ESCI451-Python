@@ -1,4 +1,6 @@
-# ESCI451-Python
+# ESCI 451-Python
+
+[![CircleCI](https://circleci.com/gh/calum-chamberlain/GPHS445_notebooks.svg?style=svg)](https://circleci.com/gh/calum-chamberlain/GPHS445_notebooks)
 
 Introduction to Python for VUW ESCI 451 course (Active Earth). Designed to be a 1-day workshop, 
 first run in March 2020.
