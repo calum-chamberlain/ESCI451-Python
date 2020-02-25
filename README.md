@@ -4,7 +4,7 @@ Test status: [![CircleCI](https://circleci.com/gh/calum-chamberlain/GPHS445_note
 
 You can run these notebooks on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/calum-chamberlain/ESCI451-Python/master)
 
-##Introduction to Python for VUW ESCI 451 course (Active Earth). 
+## Introduction to Python for VUW ESCI 451 course (Active Earth). 
 Designed to be a 1-day workshop, first run in March 2020.
 
 These notebooks aim to get students with no previous computing experience to a point where they can
