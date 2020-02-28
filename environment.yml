@@ -12,3 +12,5 @@ dependencies:
   - nbval
   - requests
   - geographiclib
+  - ipympl
+  - widgetsnbextension
