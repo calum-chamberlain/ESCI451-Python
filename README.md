@@ -19,13 +19,17 @@ The notebooks are as follows:
 3. Plotting data with matplotlib (1); - simple plotting of lists, required for visualisation of data later
 4. Simple data IO and processing with Numpy; - read from text-file, slice, add, divide, etc.
 5. Meta-data and data IO with Pandas; - read data from xls sheets, get someones dataset from them, play
-6. Calculations with data; - Finn want's to think about uncertainty
-7. Automation with functions; - DRY (Don't Repeat Yourself)
-8. More plotting with matplotlib; - colour control, datetimes, subplots.
-9. Mini-project, get climate data and plot it and uncertainity - point students towards [this page](https://towardsdatascience.com/time-series-analysis-and-climate-change-7bb4371021e) for extensions.
+6. More plotting with matplotlib;
+7. Geoscience data wrangling: play with some fun data;
+8. Mini-project, get climate data and plot it and uncertainity - point students towards [this page](https://towardsdatascience.com/time-series-analysis-and-climate-change-7bb4371021e) for extensions.
 
 ## Getting started
 
 To run these notebooks locally you will need to install the required Python packages. If you are taking
 this as a course at VUW this should have been done for you.  Otherwise, install the required packages
-listed in the `Requirements.txt` file.
+listed in the `environment.yml` file using conda:
+
+```bash
+conda create env -f environment.yml
+conda activate esci451
+```
