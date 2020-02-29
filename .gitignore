@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 data/GeoNet_CMT_solutions.csv
+data/earthquakes.csv
+data/kaikoura.csv
