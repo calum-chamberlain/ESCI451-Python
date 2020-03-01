@@ -2,3 +2,5 @@
 data/GeoNet_CMT_solutions.csv
 data/earthquakes.csv
 data/kaikoura.csv
+data/Kaikoura_acceleration_in_wellington_demeaned.txt
+data/temperature_gradient.txt
