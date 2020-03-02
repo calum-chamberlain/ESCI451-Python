@@ -4,3 +4,5 @@ data/earthquakes.csv
 data/kaikoura.csv
 data/Kaikoura_acceleration_in_wellington_demeaned.txt
 data/temperature_gradient.txt
+images/GNSS_offsets_PYGR_hidpi.png
+images/GNSS_offsets_PYGR.png
