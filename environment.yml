@@ -14,4 +14,4 @@ dependencies:
   - geographiclib
   - ipympl
   - widgetsnbextension
-  - xlrd
+  - rise
