@@ -1,6 +1,6 @@
 # ESCI 451-Python
 
-Test status: [![CircleCI](https://circleci.com/gh/calum-chamberlain/GPHS445_notebooks.svg?style=svg)](https://circleci.com/gh/calum-chamberlain/ESCI451-Python)
+Test status: [![CircleCI](https://circleci.com/gh/calum-chamberlain/ESCI451-Python.svg?style=svg)](https://circleci.com/gh/calum-chamberlain/ESCI451-Python)
 
 You can run these notebooks on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/calum-chamberlain/ESCI451-Python/master)
 
@@ -21,13 +21,14 @@ The notebooks are as follows:
 5. Meta-data and data IO with Pandas; - read data from xls sheets, get someones dataset from them, play
 6. More plotting with matplotlib;
 7. Geoscience data wrangling: play with some fun data;
-8. Mini-project, get climate data and plot it and uncertainity - point students towards [this page](https://towardsdatascience.com/time-series-analysis-and-climate-change-7bb4371021e) for extensions.
 
 ## Getting started
 
 To run these notebooks locally you will need to install the required Python packages. If you are taking
-this as a course at VUW this should have been done for you.  Otherwise, install the required packages
-listed in the `environment.yml` file using conda:
+this as a course at VUW this should have been done for you.  Otherwise, you will need an anazonda or
+miniconda installation.  To get miniconda follow the [instructions here](https://docs.conda.io/en/latest/miniconda.html).
+
+Then install the required packages listed in the `environment.yml` file using conda:
 
 ```bash
 conda create env -f environment.yml
