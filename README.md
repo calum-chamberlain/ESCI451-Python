@@ -25,7 +25,7 @@ The notebooks are as follows:
 ## Getting started
 
 To run these notebooks locally you will need to install the required Python packages. If you are taking
-this as a course at VUW this should have been done for you.  Otherwise, you will need an anazonda or
+this as a course at VUW this should have been done for you.  Otherwise, you will need an anaconda or
 miniconda installation.  To get miniconda follow the [instructions here](https://docs.conda.io/en/latest/miniconda.html).
 
 Then install the required packages listed in the `environment.yml` file using conda:
