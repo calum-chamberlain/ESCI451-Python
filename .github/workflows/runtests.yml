@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: [3.7, 3.8]
+        python-version: [3.8]
       fail-fast: false
 
     steps:
@@ -22,7 +22,7 @@ jobs:
         with:
           miniconda-version: 'latest'
           python-version: ${{ matrix.python-version }}
-          activate-environment: rteqcorrscan-test
+          activate-environment: esci451
           environment-file: environment.yml
           condarc-file: .github/test_condarc.yml
 
