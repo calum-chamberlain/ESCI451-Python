@@ -15,7 +15,12 @@ jobs:
       fail-fast: false
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout and get LFS
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Checkout LFS objects
+        run: git lfs checkout
 
       - name: Setup conda
         uses: conda-incubator/setup-miniconda@v2
