@@ -20,3 +20,4 @@ dependencies:
   - shapely
   - xarray
   - pyproj
+  - seaborn
