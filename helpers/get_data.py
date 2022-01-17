@@ -70,3 +70,65 @@ def get_geonet_quakes(
     mapper = {n: n.strip() for n in column_names}
     earthquakes.rename(columns=mapper, inplace=True)
     return earthquakes
+
+
+def get_gnss_for_station(
+    station: str, 
+    fits_url: str = "http://fits.geonet.org.nz/observation",) -> dict:
+    """
+    Get GNSS data from GeoNet for the station
+    
+    Parameters
+    ----------
+    station
+        The name of the station you want to get data for
+    fits_url
+        URL of the FITS data service you want to query.
+        
+    Returns
+    -------
+    Dictionary with keys:
+        time 
+            list of timestamps of observations
+        north
+            list of offsets in mm in the north direction
+        east
+            list of offsets in mm in the east direction
+        up          
+            list of vertical offsets in mm
+        north_error
+            list of errors in mm for north
+        east_error
+            list of errors in mm for east
+        up_error
+            list of erros in mm for up
+    
+    """
+    # Initialise an empty dictionary that we will append to
+    out = dict(time=[],
+               north=[],
+               east=[],
+               up=[],
+               north_error=[],
+               east_error=[],
+               up_error=[])
+    for channel in {"north", "east", "up"}:
+        parameters = {"typeID": channel[0], "siteID": station}
+        response = requests.get(fits_url, params=parameters)
+        assert response.status_code == 200, "Bad request"
+        payload = response.content.decode("utf-8").split("\n")
+        # payload is a csv with header
+        # This is a list-comprehension, a type of fast, one-line for loop
+        payload = [p.split(',') for p in payload]
+        # Check that this is what we expect
+        assert payload[0][0] == 'date-time', "Unkown format"
+        assert len(payload[0]) == 3, "Unknown format"
+        times, displacements, errors = zip(*[
+            (datetime.datetime.strptime(p[0], '%Y-%m-%dT%H:%M:%S.%fZ'),
+             float(p[1]), float(p[2])) for p in payload[1:-1]])
+        if len(out["time"]) == 0:
+            out.update({"time": times})
+        else:
+            assert out["time"] == times, "Different time sampling for different components."
+        out.update({channel: displacements, f"{channel}_error": errors})
+    return out
