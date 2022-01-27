@@ -1,9 +1,9 @@
 name: test
 on:
+  pull_request:
   push:
     branches:
       - master
-    pull_request:
 
 jobs:
   test_code:
@@ -33,4 +33,4 @@ jobs:
 
       - name: run test suite
         shell: bash -l {0}
-        run: pytest --nbval
+        run: pytest --nbval --sanitize-with doc_sanitize.cfg
