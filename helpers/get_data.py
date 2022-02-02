@@ -74,7 +74,10 @@ def get_geonet_quakes(
 
 def get_gnss_for_station(
     station: str, 
-    fits_url: str = "http://fits.geonet.org.nz/observation",) -> dict:
+    fits_url: str = "http://fits.geonet.org.nz/observation",
+    starttime: datetime.datetime = None,
+    endtime: datetime.datetime = None,
+) -> dict:
     """
     Get GNSS data from GeoNet for the station
     
@@ -84,6 +87,10 @@ def get_gnss_for_station(
         The name of the station you want to get data for
     fits_url
         URL of the FITS data service you want to query.
+    starttime
+        Earliest timestamp to return
+    endtime
+        Latest timestamp to return
         
     Returns
     -------
@@ -131,4 +138,9 @@ def get_gnss_for_station(
         else:
             assert out["time"] == times, "Different time sampling for different components."
         out.update({channel: displacements, f"{channel}_error": errors})
+    starttime = starttime or min(out["time"])
+    endtime = endtime or max(out["time"])
+    mask = [starttime <= t <=endtime for t in out["time"]]
+    for key, value in out.items():
+        out.update({key: [v for v, m in zip(value, mask) if m]})
     return out
