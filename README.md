@@ -31,6 +31,6 @@ miniconda installation.  To get miniconda follow the [instructions here](https:/
 Then install the required packages listed in the `environment.yml` file using conda:
 
 ```bash
-conda create env -f environment.yml
+conda env create -f environment.yml
 conda activate esci451
 ```
