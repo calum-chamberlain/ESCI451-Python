@@ -28,7 +28,8 @@ def globe_distance(
     lat1: float, 
     lon1: float, 
     lat2: float,
-    lon2: float
+    lon2: float,
+    round_to: int = 5,
 ) -> float:
     """
     Compute the great circle distance in km between two points on Earth.
@@ -39,4 +40,9 @@ def globe_distance(
     _check_latitude(lat2, 'lat2')
     result = Geodesic(a=WGS84_A, f=WGS84_F).Inverse(lat1, lon1, lat2, lon2)
 
-    return result['s12'] / 1000.
+    # Used to cope with minor floating point differences between operating 
+    # systems that we don't care about for ESCI451
+    if round_to:
+        return round(result['s12'] / 1000., round_to)
+    else:
+        return result['s12'] / 1000.
