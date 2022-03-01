@@ -8,6 +8,7 @@ dependencies:
   - pandas
   - matplotlib
   - jupyter
+  - black
   - pytest
   - nbval
   - requests
