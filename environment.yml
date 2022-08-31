@@ -22,4 +22,4 @@ dependencies:
   - xarray
   - pyproj
   - seaborn
-  - pygmt
+  - pygmt>=0.6.0
