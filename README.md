@@ -1,6 +1,6 @@
 # ESCI 451-Python
 
-Test status: ![test](https://github.com/calum-chamberlain/ESCI451-Python/workflows/test/badge.svg)
+Test status: [![test](https://github.com/calum-chamberlain/ESCI451-Python/actions/workflows/runtests.yml/badge.svg)](https://github.com/calum-chamberlain/ESCI451-Python/actions/workflows/runtests.yml)
 
 You can run these notebooks on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/calum-chamberlain/ESCI451-Python/master)
 

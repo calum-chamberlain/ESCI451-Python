@@ -7,15 +7,13 @@ dependencies:
   - scipy
   - pandas
   - matplotlib
-  - jupyter
-  - black
+  - jupyterlab
   - pytest
   - nbval
   - requests
   - geographiclib
   - ipympl
   - widgetsnbextension
-  - rise
   - cartopy
   - rasterio
   - shapely
@@ -23,3 +21,7 @@ dependencies:
   - pyproj
   - seaborn
   - pygmt>=0.6.0
+  - openpyxl
+  - pip
+  - pip:
+    - rise
