@@ -61,10 +61,16 @@ def get_geonet_quakes(
     response = requests.get(query_string)
     with open("data/earthquakes.csv", "wb") as f:
         f.write(response.content)
-    earthquakes = pd.read_csv(
-        "data/earthquakes.csv", 
-        parse_dates=["origintime", "modificationtime"],
-        dtype={"publicid": str})
+    try:
+        earthquakes = pd.read_csv(
+            "data/earthquakes.csv", 
+            parse_dates=["origintime", "modificationtime"],
+            dtype={"publicid": str})
+    except ValueError as e:
+        # Missing column - usually related to issue #27 - data request too large - read contents raw
+        with open("data/earthquakes.csv", "r") as f:
+            contents = f.read()
+            raise IOError(contents)
     # Clean up header names...
     column_names = earthquakes.columns.to_list()
     mapper = {n: n.strip() for n in column_names}
