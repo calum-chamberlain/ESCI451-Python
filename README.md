@@ -11,16 +11,15 @@ These notebooks aim to get students with no previous computing experience to a p
 automate simple data I/O and processing, as well as conduct some simple plotting.  These notebooks
 do not aim to teach you the nuances of Python as a language, or any advanced ideas in Python.
 
-The notebooks are as follows:
-
-1A. Introduction to Python; - why programming, reproducibility, keeping data and processing seperate.
-1B. Python logic - for loops and if statements, basic data types, getting data;
-2A. Loading and Plotting data;
-2B. Introduction to NumPy;
-3A. Pandas and higher-dimension data;
-3B. Time-series;
-4A. Basic map making;
-4B. Working with gridded data.
+The notebooks are as follows:  
+1A. Introduction to Python - why programming, reproducibility, keeping data and processing seperate;  
+1B. Python logic - for loops and if statements, basic data types, getting data;  
+2A. Loading and Plotting data;  
+2B. Introduction to NumPy;  
+3A. Pandas and higher-dimension data;  
+3B. Time-series;  
+4A. Basic map making;  
+4B. Working with gridded data.  
 
 ## Getting started
 
