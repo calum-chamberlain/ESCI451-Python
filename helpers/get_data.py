@@ -6,6 +6,55 @@ Helpers for getting data programatically.
 import datetime
 import requests
 import pandas as pd
+import os
+import warnings
+import zipfile
+
+
+def download_and_extract(url, outdir=None):
+    """
+    Download a zipfile from the web and extract it to a directory.
+    
+    Parameters
+    ----------
+    url
+        URL to remote zipfile
+    outfir
+        Directory to write contents to - does not have to exist
+    """
+    # Check that file is zip
+    ext = os.path.splitext(url)[-1]
+    assert ext == ".zip", f"Zip file required, extension {ext}"
+    
+    if outdir is None:
+        outdir = os.path.splitext(url.split('/')[-1])[0]
+        
+    # Make it a full path
+    outdir = os.path.realpath(outdir)
+    archive_file = f"{outdir}.zip"
+    
+    response = requests.get(url)
+    with open(archive_file, "wb") as f:
+        f.write(response.content)
+
+    # Make the location to put the data
+    if not os.path.isdir(outdir):
+        os.makedirs(outdir)
+
+    # Extract all can be unsafe - check each path doesn't have path-traversal parts...
+    with zipfile.ZipFile(archive_file, 'r') as zf:
+        for member in zf.infolist():
+            outfile = os.path.join(outdir, member.filename)
+            # check that the file lands in the directory
+            if outfile.startswith(outdir):
+                zf.extract(member, outdir)
+            else:
+                warnings.warn(f"{member.filename} has unsafe path, skipping")
+    
+    
+    # Cleanup
+    os.remove(archive_file)
+    return
 
 
 def get_geonet_quakes(
