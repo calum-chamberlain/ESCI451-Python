@@ -20,6 +20,8 @@ The notebooks are as follows:
 3B. Time-series;  
 4A. Basic map making;  
 4B. Working with gridded data.  
+5A. Introduction to scripting
+5B. Extras - for the keen-beans
 
 ## Getting started
 
@@ -32,4 +34,10 @@ Then install the required packages listed in the `environment.yml` file using co
 ```bash
 conda env create -f environment.yml
 conda activate esci451
+```
+
+Finally, open jupyter-lab and select the notebook from the left that you want to open:
+
+```bash
+jupyter-lab
 ```
