@@ -20,7 +20,7 @@ dependencies:
   - xarray
   - pyproj
   - seaborn
-  - pygmt>=0.7.0
+  - pygmt=0.8.0
   - openpyxl
   - pip
   - pip:
