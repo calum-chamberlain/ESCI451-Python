@@ -20,7 +20,7 @@ The notebooks are as follows:
 3B. Time-series;  
 4A. Basic map making;  
 4B. Working with gridded data.  
-5A. Introduction to scripting
+5A. Introduction to scripting  
 5B. Extras - for the keen-beans
 
 ## Getting started

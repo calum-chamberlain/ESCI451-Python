@@ -1,0 +1,28 @@
+name: esci451
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - jupyterlab
+  - pytest
+  - nbval
+  - requests
+  - geographiclib
+  - ipympl
+  - widgetsnbextension
+  - cartopy
+  - rasterio
+  - shapely
+  - xarray
+  - pyproj
+  - seaborn
+  - pygmt
+  - openpyxl
+  - pip
+  - pip:
+    - rise
