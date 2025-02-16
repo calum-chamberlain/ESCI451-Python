@@ -25,4 +25,4 @@ dependencies:
   - openpyxl
   - pip
   - pip:
-    - rise
+    - jupyterlab_rise
